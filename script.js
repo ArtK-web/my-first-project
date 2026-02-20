@@ -1,3 +1,3 @@
-document.getElementById('btn').onclick = function() {
-    alert('Привет! Это работает!');
+document.getElementById('helloBtn').onclick = function() {
+    document.getElementById('message').textContent = 'Привет! Всё работает!';
 };
