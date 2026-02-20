@@ -1,33 +1,24 @@
-document.getElementById('helloBtn').onclick = function() {
-    document.getElementById('message').textContent = 'Привет! Всё работает!';
-};
-// Первая кнопка
-document.getElementById('helloBtn').onclick = function() {
-    document.getElementById('message').textContent = 'Привет! Всё работает!';
-};
+window.onload = function() {
 
-// Вторая кнопка
-document.getElementById('changeImgBtn').onclick = function() {
-    document.getElementById('myImage').src = 'https://picsum.photos/300/200'; //https://agro-business.com.ua/images/756188213182894_1.jpg
-};
-// Старая функциональность оставляем
-document.getElementById('helloBtn').onclick = function() {
-    document.getElementById('message').textContent = 'Привет! Всё работает!';
-};
+    document.getElementById('helloBtn').onclick = function() {
+        const message = document.getElementById('message');
+        message.textContent = 'Привет! Всё работает!';
+        message.classList.remove('fade-in');
+        void message.offsetWidth;
+        message.classList.add('fade-in');
+    };
 
-document.getElementById('changeImgBtn').onclick = function() {
-    document.getElementById('myImage').src = 'https://picsum.photos/300/200';
-};
+    document.getElementById('changeImgBtn').onclick = function() {
+        document.getElementById('myImage').src = 'https://picsum.photos/300/200';
+    };
 
-// Новая кнопка: смена цвета и текста
-document.getElementById('colorBtn').onclick = function() {
-    // Массив цветов
-    const colors = ['#FFCCCC', '#CCFFCC', '#CCCCFF', '#FFFFCC', '#FFCCFF', '#CCFFFF'];
-    // Случайный цвет
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    // Меняем фон
-    document.body.style.backgroundColor = color;
+    document.getElementById('colorBtn').onclick = function() {
+        const colors = ['#FFCCCC', '#CCFFCC', '#CCCCFF', '#FFFFCC'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = color;
 
-    // Меняем текст сообщения
-    document.getElementById('colorMessage').textContent = `Цвет фона изменён на ${color}`;
+        document.getElementById('colorMessage').textContent =
+            'Цвет изменён на ' + color;
+    };
+
 };
